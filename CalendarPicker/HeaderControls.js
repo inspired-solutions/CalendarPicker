@@ -28,7 +28,7 @@ export default function HeaderControls(props) {
   const year = currentYear;
 
   return (
-    <View style={styles.headerWrapper}>
+    <View style={[styles.headerWrapper, { justifyContent: 'space-between', alignItems: 'center', width: '100%' }]}>
       <Controls
         elememt={previous}
         onPressControl={onPressPrevious}
