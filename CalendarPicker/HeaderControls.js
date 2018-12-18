@@ -19,29 +19,29 @@ export default function HeaderControls(props) {
     nextTitle,
     textStyle,
   } = props;
-  const MONTHS = months? months : Utils.MONTHS; // English Month Array
+  const MONTHS = months ? months : Utils.MONTHS; // English Month Array
   // getMonth() call below will return the month number, we will use it as the
   // index for month array in english
-  const previous = previousTitle ? previousTitle : 'Previous';
-  const next = nextTitle ? nextTitle : 'Next';
+  const previous = previousTitle ? previousTitle : <Text>'Previous'</Text>;
+  const next = nextTitle ? nextTitle : <Text>'Next'</Text>;
   const month = MONTHS[currentMonth];
   const year = currentYear;
 
   return (
     <View style={styles.headerWrapper}>
       <Controls
-        label={previous}
+        elememt={previous}
         onPressControl={onPressPrevious}
         styles={[styles.monthSelector, styles.prev]}
         textStyles={textStyle}
       />
       <View>
         <Text style={[styles.monthLabel, textStyle]}>
-           { month } { year }
+          {month} {year}
         </Text>
       </View>
       <Controls
-        label={next}
+        elememt={next}
         onPressControl={onPressNext}
         styles={[styles.monthSelector, styles.next]}
         textStyles={textStyle}
